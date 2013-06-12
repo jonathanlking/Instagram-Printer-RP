@@ -3,6 +3,11 @@ Raspberry-Pi-Instagram-Printer
 
 Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web server.
 
+Setup the Raspberry Pi using;
+
+    wget print.jonathanlking.com/get -O Raspberry-Pi-Instagram-Printer-Setup.sh
+    sudo sh Raspberry-Pi-Instagram-Printer-Setup.sh
+
     <Raspberry Pi Instagram Printer>
     Copyright (C) <2013>  <Jonathan King>
 
@@ -22,4 +27,4 @@ Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web ser
 Special thanks to:
     
     Jon - http://opalfruits.net/blog/ 
-For providing a much better solution to bluetooth pairing with a raspberry pi than I had before.
+    For providing a much better solution to bluetooth pairing with a Raspberry Pi than I had before.
