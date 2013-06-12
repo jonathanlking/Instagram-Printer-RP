@@ -18,3 +18,7 @@ Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web ser
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Special thanks to:
+    
+    Jon - http://opalfruits.net/blog/ for providing a much better solution to bluetooth pairing with a raspberry pi than I had before.
