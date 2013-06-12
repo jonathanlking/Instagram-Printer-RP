@@ -8,6 +8,7 @@ Setup the Raspberry Pi using;
     wget print.jonathanlking.com/get -O Raspberry-Pi-Instagram-Printer-Setup.sh
     sudo sh Raspberry-Pi-Instagram-Printer-Setup.sh
 
+
     <Raspberry Pi Instagram Printer>
     Copyright (C) <2013>  <Jonathan King>
 
