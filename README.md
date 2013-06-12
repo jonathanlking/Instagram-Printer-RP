@@ -21,4 +21,5 @@ Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web ser
 
 Special thanks to:
     
-    Jon - http://opalfruits.net/blog/ for providing a much better solution to bluetooth pairing with a raspberry pi than I had before.
+    Jon - http://opalfruits.net/blog/ 
+for providing a much better solution to bluetooth pairing with a raspberry pi than I had before.
