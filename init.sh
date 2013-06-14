@@ -2,7 +2,7 @@ echo "\nThis will guide you in setting up your Raspberry Pi Instaprint"
 echo "First off we need to install bluez, as this allows us to communicate over bluetooth to the Polaroid Pogo"
 read null
 echo "Attempting install now: \n"
-sudo apt-get install bluetooth bluez bluez-utils ussp-push
+sudo apt-get install bluetooth bluez bluez-utils ussp-push python-bluetooth
 echo "\n"
 echo "Now a quick check to make sure bluetooth is running \n"
 /etc/init.d/bluetooth status
