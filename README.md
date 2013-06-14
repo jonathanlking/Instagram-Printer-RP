@@ -3,10 +3,21 @@ Raspberry-Pi-Instagram-Printer
 
 Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web server.
 
+Download the files using;
+
+    sudo apt-get install git-core
+    git clone git://github.com/jonathanlking/Raspberry-Pi-Instagram-Printer.git
+    
+You can then get the Pi to automatically update to the latest committed files on startup by adding
+
+    git pull home/username/...locationOfParentDirectory.../Raspberry-Pi-Instagram-Printer
+
+to /etc/rc.local
+
+
 Setup the Raspberry Pi using;
 
-    wget print.jonathanlking.com/get -O Raspberry-Pi-Instagram-Printer-Setup.sh
-    sudo sh Raspberry-Pi-Instagram-Printer-Setup.sh
+    sudo sh Raspberry-Pi-Instagram-Printer/init.sh
 
 To print once setup - you get given the printer address in the setup
 
