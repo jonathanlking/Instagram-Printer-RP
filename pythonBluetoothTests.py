@@ -8,3 +8,5 @@ for bluetoothDeviceAddress in nearbyDevices:
     print "and device name", deviceName
     if "Polaroid" in deviceName:
         print "It is a polaroid Printer!"
+        with open('bt','w') as file:
+        file.write('6000\n')
