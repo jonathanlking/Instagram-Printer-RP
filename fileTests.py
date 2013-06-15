@@ -21,7 +21,7 @@ for bluetoothDeviceAddress in nearbyDevices:
         numberOfPrinters += 1
 
 if numberOfPrinters > 0:
-    print "Polaroid Pogo printer detected"
+    print "Polaroid Pogo printer detected..."
 else:
     print "No printer detected, please turn on and run this script again"
     sys.exit()
