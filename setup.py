@@ -16,7 +16,7 @@ numberOfPrinters = 0
 
 for bluetoothDeviceAddress in nearbyDevices:
     deviceName = bluetooth.lookup_name(bluetoothDeviceAddress)
-    print "Found target bluetooth device with address", bluetoothDeviceAddress, "and device name", deviceName
+    print "Found bluetooth device with address", bluetoothDeviceAddress, "and device name", deviceName
     if "Polaroid" in deviceName:
         numberOfPrinters += 1
 
