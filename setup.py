@@ -37,7 +37,7 @@ for line in cmd.stdout:
             if len(field) == len('XX:XX:XX:XX:XX:XX'):
                 hostDeviceAddress = field
                 
-if len(field) == 0:
+if len(hostDeviceAddress) == 0:
     print "Something went wrong trying to determine the address of you bluetooth adaptor, are you sure it is plugged in and working?"
     sys.exit()
 
