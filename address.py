@@ -8,7 +8,7 @@ for line in cmd.stdout:
     if "BD Address" in line:
         data = line.split()
         for field in data:
-            if field.len() == 'XX:XX:XX:XX:XX:XX'.len():
+            if len(field) == len('XX:XX:XX:XX:XX:XX'):
                 print field
             
         
