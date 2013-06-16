@@ -36,9 +36,10 @@ else:
 
 cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 ' + printerAddress, shell=True, stdout=subprocess.PIPE)
 for line in cmd.stdout:
-    print line
     length = len(line)
     print 'Length:', length, '\n'
+    print line
+    
 
 # Responces:
 # "Can't create device: Address already in use"
