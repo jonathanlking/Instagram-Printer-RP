@@ -32,8 +32,8 @@ else:
 
 # Save the address of the Polaroid Pogo so that it can be easily accessed later when trying to print
 with open('settings.txt','w') as file:
-    file.write(bluetoothDeviceAddress + '\n')
-    file.write('# Address for device: ' + deviceName + '\n')
+    file.write(printerAddress + '\n')
+    file.write('# Address for device: ' + printerName + '\n')
 
 # Get the mac address of the bluetooth adaptor
 hostDeviceAddress = ''
@@ -60,7 +60,7 @@ settingsFilePath = pathToBluetoothPincodeSettings + '/pincodes'
 
 try:
     with open(settingsFilePath,'w') as file:
-        file.write(bluetoothDeviceAddress)
+        file.write(printerAddress)
         file.write(' 6000\n')
 except IOError:
     print "Unable to write file, maybe you did not run as sudo?"
