@@ -15,6 +15,8 @@ except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
     sys.exit()
 
+print 'Printer address:', printerAddress
+
 # Get the image link
 
 imageLink = ''
@@ -49,6 +51,8 @@ subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
     # Scan for nearby bluetooth devices
 nearbyDevices = bluetooth.discover_devices()
+
+print str(nearbyDevices)
 
 if printerAddress in (bluetoothDeviceAddress for bluetoothDeviceAddress in nearbyDevices):
     print 'Printer is available'
