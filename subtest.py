@@ -3,7 +3,7 @@ import os
 import bluetooth
 import subprocess
 
-cmd = subprocess.Popen('ussp-push /dev/rfcomm0 abc.jpg file.jpg', shell=True, stdout=subprocess.PIPE)
+cmd = subprocess.Popen('ussp-push /dev/rfcomm0 abc.jpg file.jpg', shell=True, stderr=subprocess.PIPE)
 output = cmd.stdout.read()
 print output.rstrip()
 
