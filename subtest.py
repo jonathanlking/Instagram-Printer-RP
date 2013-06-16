@@ -3,7 +3,7 @@ import os
 import bluetooth
 import subprocess
 
-cmd = subprocess.Popen('ussp-push /dev/rfcomm0 abc.jpg file.jpg', shell=True, stderr=subprocess.PIPE)
+cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F', shell=True, stderr=subprocess.PIPE)
 output = cmd.communicate()
 print output
 
