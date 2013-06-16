@@ -4,6 +4,7 @@ import sys
 import os
 import urllib
 import subprocess
+import bluetooth
 
 # Get the printer address from 'settings.txt'
 
@@ -44,12 +45,19 @@ else:
 
 subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
+# Check that the printer is available
+
+    # Scan for nearby bluetooth devices
+nearbyDevices = bluetooth.discover_devices()
+
+if printerAddress in (bluetoothDeviceAddress for bluetoothDeviceAddress in nearbyDevices):
+    print 'Printer is available'
+else:
+    print 'Printer not available'
+    sys.exit()
+
+# check that the image is real
+
 # Send to photo to be printed
 
 responce = subprocess.check_call('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True)
-
-print responce
-print responce
-print responce
-print responce
-print responce
