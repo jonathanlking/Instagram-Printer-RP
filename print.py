@@ -8,10 +8,11 @@ import subprocess
 # Get the printer address from 'settings.txt'
 
 try:
-    with open('settings.txt','w') as settings:
+    with open('settings.txt','r') as settings:
         printerAddress = file.read(settings)
 except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
+    sys.exit()
 
 # Download the image to print from the link
 
@@ -27,6 +28,7 @@ try:
         file.write(photo.read())
 except IOError:
     print "Unable to write file"
+    sys.exit()
 else:
     print "Image saved locally"
 
