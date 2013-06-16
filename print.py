@@ -19,8 +19,7 @@ except IOError:
 imageLink = ''
 
 if len(sys.argv) > 1:
-    arguments = str(sys.argv)
-    imageLink = arguments[1]
+    imageLink = sys.argv[1]
 
 print 'Number of arguments:', len(sys.argv), 'arguments.'
 print 'Argument List:', str(sys.argv)
