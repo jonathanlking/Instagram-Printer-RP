@@ -15,8 +15,6 @@ except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
     sys.exit()
 
-print printerAddress
-
 # Get the image link
 
 imageLink = ''
@@ -52,16 +50,18 @@ subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
     # Scan for nearby bluetooth devices
 nearbyDevices = bluetooth.discover_devices()
 
-print str(nearbyDevices)
-
 if printerAddress in str(nearbyDevices):
     print 'Printer is available'
 else:
     print 'Printer not available'
     sys.exit()
 
-# check that the image is real
+# Check that the image is real
+# - Don't need to worry about this, the printer already handles this
 
 # Send to photo to be printed
 
 responce = subprocess.check_call('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True)
+
+print vars(responce)
+
