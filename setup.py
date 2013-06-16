@@ -7,6 +7,7 @@ import subprocess
 
 print "Searching for devices..."
 
+# Scan for nearby bluetooth devices
 nearbyDevices = bluetooth.discover_devices()
 
 if len(nearbyDevices) == 0:
@@ -27,6 +28,12 @@ else:
     print "No printer detected, please turn on and run this script again"
     sys.exit()
 
+# Save the address of the Polaroid Pogo so that it can be easily accessed later when trying to print
+with open('settings','w') as file:
+    file.write(bluetoothDeviceAddress + '\n')
+    file.write('#' + deviceName + '\n')
+
+# Get the mac address of the bluetooth adaptor
 hostDeviceAddress = ''
 
 cmd = subprocess.Popen('hciconfig hci0', shell=True, stdout=subprocess.PIPE)
@@ -46,11 +53,7 @@ pathToBluetoothPincodeSettings = '/var/lib/bluetooth/' + hostDeviceAddress
 if not os.path.exists(pathToBluetoothPincodeSettings):
     os.makedirs(pathToBluetoothPincodeSettings)
 
-#if os.access(pathToBluetoothPincodeSettings, os.W_OK):
-#    print "Can write to area"
-#else:
-#    print"Cannot write to area"
-
+# Create the pincodes file, all Polaroid Pogo's have a pin of 6000
 settingsFilePath = pathToBluetoothPincodeSettings + '/pincodes'
 
 try:
