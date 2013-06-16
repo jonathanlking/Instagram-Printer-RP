@@ -10,7 +10,7 @@ import bluetooth
 
 try:
     with open('settings.txt','r') as settings:
-        printerAddress = file.read(settings)
+        printerAddress = file.readline(settings)
 except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
     sys.exit()
