@@ -28,8 +28,12 @@ Make sure you have a bluetooth adaptor connected and the Polaroid Pogo is on
 
 Now run the setup.py script - You must run as sudo as it needs to create files in the root directory
 
+<<<<<<< HEAD
     cd Raspberry-Pi-Instagram-Printer
     sudo python setup.py
+=======
+    sudo python Raspberry-Pi-Instagram-Printer/setup.py
+>>>>>>> e422a2d42ad843ad89ec10bbfadc444a7349580b
     
 Printing
 --------
