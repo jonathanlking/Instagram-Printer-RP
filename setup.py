@@ -14,15 +14,17 @@ if len(nearbyDevices) == 0:
     print "No bluetooth devices detected, please turn on and run this script again"
     sys.exit()
 
-numberOfPrinters = 0
+printerAddress = ''
+printerName = ''
 
 for bluetoothDeviceAddress in nearbyDevices:
     deviceName = bluetooth.lookup_name(bluetoothDeviceAddress)
     print "Found bluetooth device with address", bluetoothDeviceAddress, "called", deviceName
     if "Polaroid" in deviceName:
-        numberOfPrinters += 1
+        printerAddress = bluetoothDeviceAddress
+        printerName = deviceName
 
-if numberOfPrinters > 0:
+if not len(printerAddress) == 0:
     print "Polaroid Pogo printer detected..."
 else:
     print "No printer detected, please turn on and run this script again"
