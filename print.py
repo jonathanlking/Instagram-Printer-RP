@@ -20,10 +20,9 @@ imageLink = ''
 
 if len(sys.argv) > 1:
     imageLink = sys.argv[1]
-
-print 'Number of arguments:', len(sys.argv), 'arguments.'
-print 'Argument List:', str(sys.argv)
-print imageLink
+else
+    print 'No link provided'
+    sys.exit()
 
 # Download the image to print from the link
 
@@ -46,3 +45,11 @@ else:
 subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
 # Send to photo to be printed
+
+responce = subprocess.check_call('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True)
+
+print responce
+print responce
+print responce
+print responce
+print responce
