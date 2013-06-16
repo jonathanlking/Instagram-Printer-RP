@@ -31,7 +31,7 @@ else:
 # Save the address of the Polaroid Pogo so that it can be easily accessed later when trying to print
 with open('settings','w') as file:
     file.write(bluetoothDeviceAddress + '\n')
-    file.write('#' + deviceName + '\n')
+    file.write('# Address for device:' + deviceName + '\n')
 
 # Get the mac address of the bluetooth adaptor
 hostDeviceAddress = ''
