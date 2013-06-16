@@ -20,7 +20,7 @@ imageLink = ''
 
 if len(sys.argv) > 1:
     imageLink = sys.argv[1]
-else
+else:
     print 'No link provided'
     sys.exit()
 
