@@ -34,12 +34,17 @@ else:
 
 # Bind the printer to rfcomm0
 
-p = subprocess.Popen(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], stdout=subprocess.PIPE)
-out, err = p.communicate()
+cmd = subprocess.Popen(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], shell=True, stdout=subprocess.PIPE)
+for line in cmd.stdout:
+    print line
 
-print p.stdout
-print 'Length'
-print len(out)
+
+#p = subprocess.Popen(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], stdout=subprocess.PIPE)
+#out, err = p.communicate()
+#
+#print p.stdout
+#print 'Length'
+#print len(out)
 
 #cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 ' + printerAddress, shell=True, stdout=subprocess.PIPE)
 #for line in cmd.stdout:
