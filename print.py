@@ -34,7 +34,7 @@ else:
 
 # Bind the printer to rfcomm0
 
-cmd = subprocess.Popen(['sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F', shell=True, stdout=subprocess.PIPE)
+cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F', shell=True, stdout=subprocess.PIPE)
 for line in cmd.stdout:
     print line
 
