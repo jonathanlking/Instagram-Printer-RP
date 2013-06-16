@@ -20,7 +20,7 @@ imageLink = ''
 
 if len(sys.argv) > 1:
     arguments = str(sys.argv)
-    imageLink = arguments[2]
+    imageLink = arguments[1]
 
 print 'Number of arguments:', len(sys.argv), 'arguments.'
 print 'Argument List:', str(sys.argv)
@@ -44,7 +44,6 @@ else:
 
 # Bind the printer to rfcomm0
 
-command = 'sudo rfcomm bind /dev/rfcomm0' + printerAddress
-subprocess.call(command, shell=True)
+subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
 # Send to photo to be printed
