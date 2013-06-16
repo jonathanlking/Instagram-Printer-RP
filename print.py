@@ -14,11 +14,21 @@ except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
     sys.exit()
 
+# Get the image link
+
+imageLink = ''
+
+if len(sys.argv) > 1:
+    arguments = str(sys.argv)
+    imageLink = arguments[0]
+
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+print imageLink
+
 # Download the image to print from the link
 
-photoLink = 'http://instagram.com/p/anrQQ9vA8p/'
-
-paramaters = urllib.urlencode({'link': photoLink})
+paramaters = urllib.urlencode({'link': imageLink})
 photo = urllib.urlopen("http://instagram.jonathanlking.com/engine/link?%s" % paramaters)
 
 # Save the image to file
@@ -34,25 +44,6 @@ else:
 
 # Bind the printer to rfcomm0
 
-cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F', shell=True, stdout=subprocess.PIPE)
-for line in cmd.stdout:
-    print line
+subprocess.call('sudo rfcomm bind /dev/rfcomm0' + printerAddress, shell=True)
 
-
-#p = subprocess.Popen(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], stdout=subprocess.PIPE)
-#out, err = p.communicate()
-#
-#print p.stdout
-#print 'Length'
-#print len(out)
-
-#cmd = subprocess.Popen('sudo rfcomm bind /dev/rfcomm0 ' + printerAddress, shell=True, stdout=subprocess.PIPE)
-#for line in cmd.stdout:
-##    length = len(line)
-#    print 'Length:'
-#    print line
-
-
-# Responces:
-# "Can't create device: Address already in use"
-# No responce = success
+# Send to photo to be printed
