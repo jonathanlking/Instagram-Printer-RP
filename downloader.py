@@ -9,7 +9,7 @@ photo = urllib.urlopen("http://instagram.jonathanlking.com/engine/link?%s" % par
 
 try:
     with open('temporaryImage.jpg','w') as file:
-        file.write(photo)
+        file.write(photo.read())
 except IOError:
     print "Unable to write file"
 else:
