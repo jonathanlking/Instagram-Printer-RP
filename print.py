@@ -65,5 +65,5 @@ responce = subprocess.check_call('ls', shell=True)
 
 #responce = subprocess.check_call('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True)
 
-print vars(responce)
+print responce
 
