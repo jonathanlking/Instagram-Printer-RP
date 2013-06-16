@@ -37,7 +37,7 @@ else:
 p = subprocess.Popen(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], stdout=subprocess.PIPE)
 out, err = p.communicate()
 
-print out
+print p.stdout
 print 'Length'
 print len(out)
 
