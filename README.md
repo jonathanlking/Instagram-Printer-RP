@@ -34,11 +34,11 @@ Now run the setup.py script - You must run as sudo as it needs to create files i
 Printing
 --------
 
-To print once setup use the following code - You can find the printer address in "settings.txt"
+To print once setup use the following code;
 
-    sh print.sh instagramLink printerAddress
+    python print.py instagramLink
     
-For example `sh print.sh http://instagram.com/p/Y-6a52hOmG/ 00:04:48:1B:87:7F`
+For example `python print.py http://instagram.com/p/Y-6a52hOmG/`
 
 License
 -------
