@@ -67,7 +67,7 @@ errors = sendPhoto.stderr.read()
 
 if 'connection established' in output.lower() and 'error' not in errors.lower():
 	#successfully printed
-	print 'Successfully printed!'
+	print 'Successfully sent to printer'
 
 else:
 	print 'There was an error:', '\033[91m', errors
