@@ -68,7 +68,7 @@ sendPhoto = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg
 output = sendPhoto.stdout.read()
 errors = sendPhoto.stderr.read()
 
-if 'connection established' in output.lower() && 'error' not in errors.lower():
+if 'connection established' in output.lower() and 'error' not in errors.lower():
 	#successfully printed
 	print 'Successfully printed!'
 
