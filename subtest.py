@@ -3,8 +3,6 @@ import os
 import bluetooth
 import subprocess
 
-from termcolor import colored
-
 cmd = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stderr=subprocess.PIPE)
 output = cmd.communicate()
 
