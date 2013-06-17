@@ -9,7 +9,7 @@ cmd = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', she
 output = cmd.communicate()
 
 for line in output:
-	print colored(line, 'red')
+	print '\033[93m', line, '\n'
 	
 #'sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F'
 #'ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg'
