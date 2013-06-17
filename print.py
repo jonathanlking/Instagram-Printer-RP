@@ -45,6 +45,9 @@ else:
 
 subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
+print '\033[92m', 'Output:', output, '\n'
+print '\033[91m', 'Errors:', errors, '\n'
+
 # Check that the printer is available
 
 # Scan for nearby bluetooth devices
@@ -61,6 +64,13 @@ else:
 
 # Send to photo to be printed
 
-responce = subprocess.check_call('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True)
+sendPhoto = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+output = sendPhoto.stdout.read()
+errors = sendPhoto.stderr.read()
 
-print responce
+if 'connection established' in output.lower() && 'error' not in errors.lower():
+	#successfully printed
+	print 'Successfully printed!'
+
+else:
+	print 'There was an error:', '\033[91m', errors
