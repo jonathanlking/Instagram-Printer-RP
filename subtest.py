@@ -4,10 +4,11 @@ import bluetooth
 import subprocess
 
 cmd = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-output = cmd.communicate()
+output = cmd.stdout
+errors = cmd.stderr
 
-for line in output:
-	print '\033[93m', line, '\n'
+print '\033[92m', 'Output:', output, '\n'
+print '\033[91m', 'Errors:', errors, '\n'
 	
 #'sudo rfcomm bind /dev/rfcomm0 00:04:48:1B:87:7F'
 #'ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg'
