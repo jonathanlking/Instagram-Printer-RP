@@ -4,8 +4,8 @@ import bluetooth
 import subprocess
 
 cmd = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-output = cmd.stdout
-errors = cmd.stderr
+output = cmd.stdout.read()
+errors = cmd.stderr.read()
 
 print '\033[92m', 'Output:', output, '\n'
 print '\033[91m', 'Errors:', errors, '\n'
