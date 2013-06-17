@@ -43,7 +43,7 @@ else:
 
 # Bind the printer to rfcomm0
 
-subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
+bindAddress = subprocess.check_output(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress], stderr=subprocess.STDOUT)
 
 # Check that the printer is available
 
