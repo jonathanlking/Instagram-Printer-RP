@@ -45,9 +45,6 @@ else:
 
 subprocess.call(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddress])
 
-print '\033[92m', 'Output:', output, '\n'
-print '\033[91m', 'Errors:', errors, '\n'
-
 # Check that the printer is available
 
 # Scan for nearby bluetooth devices
