@@ -13,9 +13,9 @@ def readPrinterAddress():
 			printerAddress = file.readline(settings).rstrip()
 			return printerAddress
     except IOError:
-    	print "Unable to read printer address, do you have a settings.txt file?"
+        print "Unable to read printer address, do you have a settings.txt file?"
     	sys.exit()
-
+    	
 def downloadPhotoFromLink(link):
 	
 	paramaters = urllib.urlencode({'link': link})
