@@ -6,6 +6,16 @@ import bluetooth
 
 TEMP_FILE_NAME = 'temporaryImage.jpg'
 
+def readPrinterAddress:
+
+	try:
+		with open('settings.txt','r') as settings:
+			printerAddress = file.readline(settings).rstrip()
+			return printerAddress
+    except IOError:
+    	print "Unable to read printer address, do you have a settings.txt file?"
+    	sys.exit()
+
 def downloadPhotoFromLink(link):
 	
 	paramaters = urllib.urlencode({'link': link})
@@ -33,6 +43,14 @@ if len(sys.argv) > 1:
 else:
     print 'No link provided'
     sys.exit()
+    
+
+
+# Get the printer address from 'settings.txt'
+
+printerAddress = readPrinterAddress()
+print printerAddress
+
 
 # Download the image to print from the link
 
