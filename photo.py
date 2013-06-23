@@ -10,3 +10,5 @@ def savePhotoWithName(photo, name):
 		sys.exit()
 	else:
 		print "Image saved locally"
+		
+savePhotoWithName(photo, "tempTest")
