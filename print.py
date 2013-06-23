@@ -16,21 +16,21 @@ def downloadPhotoFromLink(link):
 	
 def savePhotoWithName(photo, name):
 
-# 	try:
-#    		with open(name,'w') as file:
-#         	file.write(photo.read())
-#     except IOError:
-#     	print "Unable to write file"
-#     	sys.exit()
-#     else:
-#     	print "Image saved locally"
+	try:
+		with open(name,'w') as file:
+			file.write(photo.read())
+	except IOError:
+		print "Unable to write file"
+		sys.exit()
+	else:
+		print "Image saved locally"
 
 def readPrinterAddress:
 
 	try:
-    	with open('settings.txt','r') as settings:
-        	printerAddress = file.readline(settings).rstrip()
-        	return printerAddress
+		with open('settings.txt','r') as settings:
+			printerAddress = file.readline(settings).rstrip()
+			return printerAddress
     except IOError:
     	print "Unable to read printer address, do you have a settings.txt file?"
     	sys.exit()
