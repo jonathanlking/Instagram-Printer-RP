@@ -6,7 +6,7 @@ import bluetooth
 
 TEMP_FILE_NAME = 'temporaryImage.jpg'
 
-def readPrinterAddress:
+def readPrinterAddress():
 
 	try:
 		with open('settings.txt','r') as settings:

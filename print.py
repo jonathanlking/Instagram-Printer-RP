@@ -25,7 +25,7 @@ def savePhotoWithName(photo, name):
 	else:
 		print "Image saved locally"
 
-def readPrinterAddress:
+def readPrinterAddress():
 
 	try:
 		with open('settings.txt','r') as settings:
