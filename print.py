@@ -8,8 +8,13 @@ import bluetooth
 
 # Get the printer address from 'settings.txt'
 
+directory = os.path.dirname(__file__)
+settingsFilename = os.path.join(directory, 'settings.txt')
+imageFilename = os.path.join(directory, 'temporaryImage.jpg')
+
+
 try:
-    with open('settings.txt','r') as settings:
+    with open(settingsFilename,'r') as settings:
         printerAddress = file.readline(settings).rstrip()
 except IOError:
     print "Unable to read printer address, do you have a settings.txt file?"
@@ -33,7 +38,7 @@ photo = urllib.urlopen("http://instagram.jonathanlking.com/engine/link?%s" % par
 # Save the image to file
 
 try:
-    with open('temporaryImage.jpg','w') as file:
+    with open(imageFilename,'w') as file:
         file.write(photo.read())
 except IOError:
     print "Unable to write file"
@@ -61,7 +66,7 @@ else:
 
 # Send to photo to be printed
 
-sendPhoto = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+sendPhoto = subprocess.Popen(['ussp-push', '/dev/rfcomm0', imageFilename, 'file.jpg'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 output = sendPhoto.stdout.read()
 errors = sendPhoto.stderr.read()
 
