@@ -11,4 +11,5 @@ import bluetooth
 response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPrintURL');
 photoURL = response.read();
 print photoURL;
- 
+
+os.system(["python print.py",photoURL]);
