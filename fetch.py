@@ -8,5 +8,7 @@ import bluetooth
 
 # Download the image url to print
 
-photoURL = urllib.urlopen("http://instagram.jonathanlking.com/service?requestPrintURL");
+response = urllib.request.urlopen('http://instagram.jonathanlking.com/service?requestPrintURL');
+photoURL = response.read();
 print photoURL;
+ 
