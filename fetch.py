@@ -12,6 +12,6 @@ response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPri
 photoURL = response.read();
 print photoURL;
 
-if(!photoURL) sys.exit()
+if not photoURL sys.exit()
 
 subprocess.call(['python', 'print.py', photoURL])
