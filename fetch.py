@@ -14,4 +14,4 @@ print photoURL;
 
 if not photoURL: sys.exit()
 
-subprocess.call(['python', 'print.py', photoURL])
+subprocess.call(['python', '/home/pi/Raspberry-Pi-Instagram-Printer/fetch.py', photoURL])
