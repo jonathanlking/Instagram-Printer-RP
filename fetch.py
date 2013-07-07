@@ -12,4 +12,4 @@ response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPri
 photoURL = response.read();
 if not photoURL: sys.exit()
 print photoURL;
-subprocess.call(['python', '/home/pi/Raspberry-Pi-Instagram-Printer/print.py', photoURL])
+subprocess.call(['python', 'print.py', photoURL])
