@@ -12,4 +12,4 @@ response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPri
 photoURL = response.read();
 print photoURL;
 
-printPhoto = subprocess.check_output(['python', 'print.py', photoURL], stderr=subprocess.STDOUT)
+subprocess.call(['python', 'print.py', photoURL])
