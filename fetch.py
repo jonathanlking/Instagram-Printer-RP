@@ -10,8 +10,10 @@ import bluetooth
 
 response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPrintURL');
 photoURL = response.read();
+if not photoURL: sys.exit()
+
 print photoURL;
 
-if not photoURL: sys.exit()
+
 
 subprocess.call(['python', '/home/pi/Raspberry-Pi-Instagram-Printer/fetch.py', photoURL])
