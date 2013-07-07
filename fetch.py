@@ -12,4 +12,4 @@ response = urllib.urlopen('http://instagram.jonathanlking.com/service?requestPri
 photoURL = response.read();
 print photoURL;
 
-os.system(["python print.py",photoURL]);
+os.system("python print.py %s", photoURL);
