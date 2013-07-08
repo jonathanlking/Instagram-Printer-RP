@@ -66,7 +66,6 @@ else:
 
 # Send to photo to be printed
 
-comm
 sendPhoto = subprocess.Popen(['ussp-push', '/dev/rfcomm0', 'temporaryImage.jpg', 'file.jpg'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 output = sendPhoto.stdout.read()
 errors = sendPhoto.stderr.read()
