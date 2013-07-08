@@ -38,7 +38,7 @@ photo = urllib.urlopen("http://instagram.jonathanlking.com/engine/link?%s" % par
 # Save the image to file
 
 try:
-    with open(imageFilename,'w') as file:
+    with open('temporaryImage.jpg','w') as file:
         file.write(photo.read())
 except IOError:
     print "Unable to write file"
@@ -66,7 +66,8 @@ else:
 
 # Send to photo to be printed
 
-sendPhoto = subprocess.Popen(['ussp-push', '/dev/rfcomm0', imageFilename, 'file.jpg'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+comm
+sendPhoto = subprocess.Popen(['ussp-push', '/dev/rfcomm0', 'temporaryImage.jpg', 'file.jpg'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 output = sendPhoto.stdout.read()
 errors = sendPhoto.stderr.read()
 
