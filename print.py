@@ -26,10 +26,6 @@ def savePhotoWithName(photo, name):
 		print "Image saved locally"
 
 def readPrinterAddress():
-
-
-
-
 	
 	try:
 		with open('settings.txt','r') as settings:
@@ -92,8 +88,7 @@ subprocess.check_output(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddres
 
 if not printerAvailable(printerAddress):
 	print "No printer"
-		sys.exit()
-
+	sys.exit()
 
 # Check that the image is real
 # - Don't need to worry about this, the printer already handles this
