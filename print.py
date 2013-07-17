@@ -15,7 +15,7 @@ def downloadPhotoFromLink(link):
 	return photo
 
 def savePhotoWithName(photo, name):
-    
+	
 	try:
 		with open(name,'w') as file:
 			file.write(photo.read())
@@ -26,40 +26,37 @@ def savePhotoWithName(photo, name):
 		print "Image saved locally"
 
 def readPrinterAddress():
-    
+	
 	try:
 		with open('settings.txt','r') as settings:
 			printerAddress = file.readline(settings).rstrip()
 			return printerAddress
-        except IOError:
-                print "Unable to read printer address, do you have a settings.txt file?"
-                sys.exit()
-        else:
+		except IOError:
+				print "Unable to read printer address, do you have a settings.txt file?"
+				sys.exit()
+		else:
 
 def printerAvailable(printerAddress):
 	
 	# Scan for nearby bluetooth devices
 	nearbyDevices = bluetooth.discover_devices()
-    
+	
 	if printerAddress in str(nearbyDevices):
 		return True
-        else:
+	else:
 		return False
 
 def sendPhotoToPrintWithFilename(filename):
-    
+	
 	sendPhoto = subprocess.Popen('ussp-push /dev/rfcomm0' + filename + 'file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 	output = sendPhoto.stdout.read()
 	errors = sendPhoto.stderr.read()
-    
+	
 	if 'connection established' in output.lower() and 'error' not in errors.lower():
 		return True
 	else:
 		print 'There was an error:', '\033[91m', errors
 		return False
-
-
-
 
 # Get the printer address from 'settings.txt'
 
@@ -70,10 +67,10 @@ printerAddress = readPrinterAddress()
 imageLink = ''
 
 if len(sys.argv) > 1:
-    imageLink = sys.argv[1]
+	imageLink = sys.argv[1]
 else:
-    print 'No link provided'
-    sys.exit()
+	print 'No link provided'
+	sys.exit()
 
 # Download the image to print from the link
 
@@ -91,7 +88,7 @@ subprocess.check_output(['sudo', 'rfcomm', 'bind', '/dev/rfcomm0', printerAddres
 
 if not printerAvailable(printerAddress):
 	print "No printer"
-        sys.exit()
+		sys.exit()
 
 
 # Check that the image is real
@@ -99,5 +96,5 @@ if not printerAvailable(printerAddress):
 
 # Send to photo to be printed
 
-if  sendPhotoToPrintWithFilename(TEMP_FILE_NAME):
+if	sendPhotoToPrintWithFilename(TEMP_FILE_NAME):
 	print "Sent to printer"
