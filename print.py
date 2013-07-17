@@ -42,9 +42,9 @@ def printerAvailable(printerAddress):
 	nearbyDevices = bluetooth.discover_devices()
     
 	if printerAddress in str(nearbyDevices):
-    return True
+		return True
         else:
-            return False
+		return False
 
 def sendPhotoToPrintWithFilename(filename):
     
