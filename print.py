@@ -32,8 +32,8 @@ def readPrinterAddress():
 			printerAddress = file.readline(settings).rstrip()
 			return printerAddress
 		except IOError:
-				print "Unable to read printer address, do you have a settings.txt file?"
-				sys.exit()
+			print "Unable to read printer address, do you have a settings.txt file?"
+			sys.exit()
 		else:
 
 def printerAvailable(printerAddress):
