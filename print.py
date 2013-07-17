@@ -60,21 +60,7 @@ def sendPhotoToPrintWithFilename(filename):
 
 # Get the printer address from 'settings.txt'
 
-<<<<<<< HEAD
-directory = os.path.dirname(__file__)
-settingsFilename = os.path.join(directory, 'settings.txt')
-imageFilename = os.path.join(directory, 'temporaryImage.jpg')
-
-
-try:
-    with open(settingsFilename,'r') as settings:
-        printerAddress = file.readline(settings).rstrip()
-except IOError:
-    print "Unable to read printer address, do you have a settings.txt file?"
-    sys.exit()
-=======
 printerAddress = readPrinterAddress()
->>>>>>> functional
 
 # Get the image link
 
@@ -108,19 +94,6 @@ if not printerAvailable(printerAddress):
 # - Don't need to worry about this, the printer already handles this
 
 # Send to photo to be printed
-<<<<<<< HEAD
-sendPhoto = subprocess.Popen('ussp-push /dev/rfcomm0 temporaryImage.jpg file.jpg', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-output = sendPhoto.stdout.read()
-errors = sendPhoto.stderr.read()
-
-if 'connection established' in output.lower() and 'error' not in errors.lower():
-	#successfully printed
-	print 'Successfully sent to printer'
-
-else:
-	print 'There was an error:', '\033[91m', errors
-=======
 
 if	sendPhotoToPrintWithFilename(TEMP_FILE_NAME):
 	print "Sent to printer"
->>>>>>> functional
