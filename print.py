@@ -95,5 +95,5 @@ if not printerAvailable(printerAddress):
 
 # Send to photo to be printed
 
-if	sendPhotoToPrintWithFilename(TEMP_FILE_NAME):
+if sendPhotoToPrintWithFilename(TEMP_FILE_NAME):
 	print "Sent to printer"
