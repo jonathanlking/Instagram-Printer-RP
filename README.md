@@ -1,4 +1,4 @@
-Raspberry-Pi-Instagram-Printer
+Instagram-Printer-RP
 ==============================
 
 Create your own Instagram printer with a Raspberry Pi, Polaroid Pogo and web server.
