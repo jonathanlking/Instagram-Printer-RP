@@ -11,7 +11,7 @@ TEMP_FILE_NAME = 'temporaryImage.jpg'
 def downloadPhotoFromLink(link):
 	
 	paramaters = urllib.urlencode({'link': link})
-	photo = urllib.urlopen("http://instagram.jonathanlking.com/engine/link?%s" % paramaters)
+	photo = urllib.urlopen("http://instagram.jonathanlking.com/link?%s" % paramaters)
 	return photo
 
 def savePhotoWithName(photo, name):
